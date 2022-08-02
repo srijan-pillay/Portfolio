@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label>Enter something: </label>
+    <input type="text" id = "input" name = "name">
+    <button id="button" onclick="abc()">click here</button>
+    <div id="div">
+        
+    </div>  
+
+</body>
+
+<script>
+    
+    var count = 1; // we have declared count outside the function bcoz if count was declared insside it, every time the function was called the value of count would have been changed to 1 again
+
+        function abc(){
+        var parent = document.getElementById("div");  // creating parent element
+        var data = document.getElementById("input").value;  // getting the input value and storing it in data
+        var node = document.createElement('p');   // creating child element
+        
+            if(data==10)
+            {
+                node.innerHTML = count + " " + data + " you won";
+                parent.appendChild(node);      //appending node in parent
+                count++;
+            }
+            else if(data>10)
+            {
+
+                node.innerHTML = count + " " + data + " too high";
+                parent.appendChild(node);
+                count++;
+            }
+
+            else{
+                node.innerHTML = count + " " + data + " too low";
+                parent.appendChild(node);
+                count++;    
+            }
+            
+
+
+        
+    }
+
+    
+    
+</script>
+</html>
